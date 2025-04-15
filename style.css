@@ -248,3 +248,20 @@ footer {
   transform: translate(-50%, -50%);
   opacity: 0.5;
 }
+.season-selector,
+.episode-selector {
+  margin: 10px 0;
+}
+
+.season-selector label,
+.episode-selector label {
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.season-selector select,
+.episode-selector select {
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+}
