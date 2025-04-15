@@ -8,9 +8,10 @@ body {
 header {
   background-color: #1a1a1a;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 30px;
+  padding: 15px 20px;
 }
 
 .logo {
@@ -19,10 +20,16 @@ header {
   color: #e91e63;
 }
 
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 10px;
+}
+
 nav a {
   color: #fff;
   text-decoration: none;
-  margin-left: 20px;
   transition: color 0.3s ease;
 }
 
@@ -31,24 +38,27 @@ nav a:hover {
 }
 
 main {
-  padding: 30px;
+  padding: 20px;
 }
 
 h1 {
   color: #e91e63;
+  font-size: 22px;
 }
 
 .anime-list {
   display: flex;
-  gap: 20px;
   flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
 }
 
 .anime-card {
   background-color: #1a1a1a;
   border-radius: 8px;
   padding: 15px;
-  width: 250px;
+  width: 100%;
+  max-width: 300px;
   box-shadow: 0 0 10px rgba(255, 105, 180, 0.2);
 }
 
@@ -88,4 +98,31 @@ footer {
   padding: 20px;
   margin-top: 40px;
   color: #888;
+}
+
+/* --- Мобильная адаптация --- */
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .anime-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .anime-card {
+    width: 100%;
+  }
+
+  h1 {
+    font-size: 20px;
+    text-align: center;
+  }
 }
