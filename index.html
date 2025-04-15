@@ -1,12 +1,42 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <title>Мой Аниме-Сайт</title>
+  <title>Мой Аниме Сайт</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Добро пожаловать!</h1>
-  <p>Это мой приватный сайт для обучения и друзей.</p>
+  <header>
+    <div class="logo">AnimeZone</div>
+    <nav>
+      <a href="#">Главная</a>
+      <a href="#">Аниме</a>
+      <a href="#">По жанрам</a>
+      <a href="#">Поиск</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Популярное аниме</h1>
+    <div class="anime-list">
+      <div class="anime-card">
+        <img src="https://upload.wikimedia.org/wikipedia/en/9/94/NarutoCoverTankobon1.jpg" alt="Naruto">
+        <h2>Naruto</h2>
+        <p>Наруто — молодой ниндзя, мечтающий стать Хокаге. Его путь только начинается.</p>
+        <a class="watch-btn" href="#">Смотреть</a>
+      </div>
+
+      <div class="anime-card">
+        <img src="https://upload.wikimedia.org/wikipedia/en/7/72/Attack_on_Titan_S1_DVD.jpg" alt="Attack on Titan">
+        <h2>Attack on Titan</h2>
+        <p>Человечество сражается с титанами в постапокалиптическом мире.</p>
+        <a class="watch-btn" href="#">Смотреть</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 AnimeZone. Все права защищены.</p>
+  </footer>
 </body>
 </html>
