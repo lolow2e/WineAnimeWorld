@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Naruto — Смотреть аниме</title>
-  <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -24,33 +23,32 @@
 
     <label for="episode-select">Выберите серию:</label>
     <select id="episode-select" onchange="changeEpisode(this.value)">
-      <option value="videos/naruto_ep1.mp4">Сезон 1 - Серия 1</option>
-      <option value="videos/naruto_ep2.mp4">Сезон 1 - Серия 2</option>
-      <!-- Добавь ещё серии по желанию -->
+      <option value="https://drive.google.com/file/d/19qC43bku8ss_vS1s9qB5oBwhnHcdlk1Z/preview">
+        Сезон 1 - Серия 1
+      </option>
+      <!-- Когда будут другие серии — просто добавь их сюда -->
     </select>
 
-    <video id="player" playsinline controls width="100%" height="400">
-      <source src="videos/naruto_ep1.mp4" type="video/mp4" />
-    </video>
+    <div id="video-container" style="margin-top: 20px;">
+      <iframe
+        id="video-frame"
+        src="https://drive.google.com/file/d/19qC43bku8ss_vS1s9qB5oBwhnHcdlk1Z/preview"
+        width="100%"
+        height="480"
+        allow="autoplay"
+        allowfullscreen
+        frameborder="0"
+      ></iframe>
+    </div>
   </main>
 
   <footer>
     <p>&copy; 2025 AnimeVerse</p>
   </footer>
 
-  <script src="https://cdn.plyr.io/3.7.8/plyr.polyfilled.js"></script>
   <script>
-    const player = new Plyr('#player');
-    function changeEpisode(videoSrc) {
-      player.source = {
-        type: 'video',
-        sources: [
-          {
-            src: videoSrc,
-            type: 'video/mp4',
-          },
-        ],
-      };
+    function changeEpisode(url) {
+      document.getElementById("video-frame").src = url;
     }
   </script>
 </body>
