@@ -2,41 +2,53 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <title>Мой Аниме Сайт</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AnimeVerse</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
-    <div class="logo">AnimeZone</div>
-    <nav>
+    <div class="logo">AnimeVerse</div>
+    <nav class="nav-links">
       <a href="#">Главная</a>
       <a href="#">Аниме</a>
-      <a href="#">По жанрам</a>
+      <a href="#">Жанры</a>
       <a href="#">Поиск</a>
     </nav>
   </header>
 
   <main>
-    <h1>Популярное аниме</h1>
-    <div class="anime-list">
-      <div class="anime-card">
-        <img src="https://upload.wikimedia.org/wikipedia/en/9/94/NarutoCoverTankobon1.jpg" alt="Naruto">
-        <h2>Naruto</h2>
-        <p>Наруто — молодой ниндзя, мечтающий стать Хокаге. Его путь только начинается.</p>
-        <a class="watch-btn" href="#">Смотреть</a>
-      </div>
+    <section class="hero">
+      <h1>Добро пожаловать в мир аниме!</h1>
+      <p>Смотри любимые аниме онлайн и открывай новые миры каждый день.</p>
+      <a href="#" class="hero-btn">Смотреть сейчас</a>
+    </section>
 
-      <div class="anime-card">
-        <img src="https://upload.wikimedia.org/wikipedia/en/7/72/Attack_on_Titan_S1_DVD.jpg" alt="Attack on Titan">
-        <h2>Attack on Titan</h2>
-        <p>Человечество сражается с титанами в постапокалиптическом мире.</p>
-        <a class="watch-btn" href="#">Смотреть</a>
+    <section class="anime-section">
+      <h2>Популярное</h2>
+      <div class="anime-list">
+        <div class="anime-card">
+          <img src="https://upload.wikimedia.org/wikipedia/en/9/94/NarutoCoverTankobon1.jpg" alt="Naruto">
+          <div class="card-info">
+            <h3>Naruto</h3>
+            <p>Путь ниндзя только начинается!</p>
+            <a href="#" class="watch-btn">Смотреть</a>
+          </div>
+        </div>
+        <div class="anime-card">
+          <img src="https://upload.wikimedia.org/wikipedia/en/7/72/Attack_on_Titan_S1_DVD.jpg" alt="AOT">
+          <div class="card-info">
+            <h3>Attack on Titan</h3>
+            <p>Человечество против титанов.</p>
+            <a href="#" class="watch-btn">Смотреть</a>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
   </main>
 
   <footer>
-    <p>&copy; 2025 AnimeZone. Все права защищены.</p>
+    <p>&copy; 2025 AnimeVerse. Сделано с душой.</p>
   </footer>
 </body>
 </html>
