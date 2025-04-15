@@ -1,49 +1,80 @@
+/* Общие стили */
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  background-color: #0d0d0d;
+  background: linear-gradient(to bottom, #0f0f1a, #1c1c2b);
   color: #fff;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
 }
 
 header {
-  background-color: #1a1a1a;
+  background-color: #141421;
+  padding: 15px 30px;
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 20px;
+  animation: fadeInDown 0.6s ease-out;
 }
 
 .logo {
-  font-size: 24px;
+  font-size: 26px;
   font-weight: bold;
-  color: #e91e63;
+  color: #ff4081;
 }
 
-nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
-  margin-top: 10px;
-}
-
-nav a {
+.nav-links a {
+  margin-left: 20px;
   color: #fff;
-  text-decoration: none;
   transition: color 0.3s ease;
 }
 
-nav a:hover {
-  color: #e91e63;
+.nav-links a:hover {
+  color: #ff4081;
 }
 
-main {
-  padding: 20px;
+.hero {
+  text-align: center;
+  padding: 60px 20px;
+  animation: fadeIn 1s ease-in-out;
 }
 
-h1 {
-  color: #e91e63;
-  font-size: 22px;
+.hero h1 {
+  font-size: 36px;
+  color: #ff4081;
+}
+
+.hero p {
+  font-size: 18px;
+  margin: 10px 0 20px;
+  color: #ccc;
+}
+
+.hero-btn {
+  background-color: #ff4081;
+  padding: 10px 25px;
+  border-radius: 5px;
+  color: #fff;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.hero-btn:hover {
+  background-color: #e91e63;
+}
+
+.anime-section {
+  padding: 30px 20px;
+}
+
+.anime-section h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #ff4081;
+  text-align: center;
 }
 
 .anime-list {
@@ -54,50 +85,73 @@ h1 {
 }
 
 .anime-card {
-  background-color: #1a1a1a;
-  border-radius: 8px;
-  padding: 15px;
-  width: 100%;
-  max-width: 300px;
-  box-shadow: 0 0 10px rgba(255, 105, 180, 0.2);
+  background-color: #1f1f2e;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 280px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeInUp 1s ease;
+}
+
+.anime-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px rgba(255, 64, 129, 0.3);
 }
 
 .anime-card img {
   width: 100%;
-  border-radius: 6px;
+  height: auto;
 }
 
-.anime-card h2 {
-  margin-top: 10px;
-  font-size: 20px;
+.card-info {
+  padding: 15px;
 }
 
-.anime-card p {
+.card-info h3 {
+  margin-top: 0;
+}
+
+.card-info p {
+  color: #bbb;
   font-size: 14px;
-  color: #ccc;
+  margin: 5px 0 10px;
 }
 
 .watch-btn {
   display: inline-block;
-  margin-top: 10px;
   padding: 8px 15px;
-  background-color: #e91e63;
+  background-color: #ff4081;
+  border-radius: 5px;
   color: #fff;
-  text-decoration: none;
-  border-radius: 4px;
-  transition: background-color 0.3s ease;
+  font-size: 14px;
+  transition: background 0.3s ease;
 }
 
 .watch-btn:hover {
-  background-color: #d81b60;
+  background-color: #e91e63;
 }
 
 footer {
-  background-color: #1a1a1a;
   text-align: center;
   padding: 20px;
-  margin-top: 40px;
+  background-color: #141421;
   color: #888;
+}
+
+/* --- Анимации --- */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-40px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 /* --- Мобильная адаптация --- */
@@ -107,22 +161,23 @@ footer {
     align-items: flex-start;
   }
 
-  nav {
+  .nav-links {
+    margin-top: 10px;
+    display: flex;
     flex-direction: column;
     width: 100%;
   }
 
-  .anime-list {
-    flex-direction: column;
-    align-items: center;
+  .nav-links a {
+    margin: 5px 0;
+  }
+
+  .hero h1 {
+    font-size: 24px;
   }
 
   .anime-card {
     width: 100%;
-  }
-
-  h1 {
-    font-size: 20px;
-    text-align: center;
+    max-width: 95%;
   }
 }
