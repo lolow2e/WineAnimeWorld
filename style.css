@@ -265,3 +265,36 @@ footer {
   border-radius: 5px;
   border: none;
 }
+.anime-page {
+  padding: 40px 20px;
+  max-width: 1000px;
+  margin: auto;
+  animation: fadeIn 1s ease;
+}
+
+.anime-page h1 {
+  color: #ff4081;
+  margin-bottom: 10px;
+}
+
+.anime-page p {
+  color: #ccc;
+  margin-bottom: 10px;
+}
+
+.anime-page select {
+  padding: 10px;
+  font-size: 16px;
+  background-color: #1f1f2e;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+#video-container {
+  margin-top: 30px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(255, 64, 129, 0.2);
+}
