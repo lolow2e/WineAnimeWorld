@@ -1,8 +1,91 @@
 body {
-  font-family: sans-serif;
-  background-color: #f4f4f4;
-  padding: 20px;
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #0d0d0d;
+  color: #fff;
 }
+
+header {
+  background-color: #1a1a1a;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #e91e63;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 20px;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #e91e63;
+}
+
+main {
+  padding: 30px;
+}
+
 h1 {
   color: #e91e63;
+}
+
+.anime-list {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.anime-card {
+  background-color: #1a1a1a;
+  border-radius: 8px;
+  padding: 15px;
+  width: 250px;
+  box-shadow: 0 0 10px rgba(255, 105, 180, 0.2);
+}
+
+.anime-card img {
+  width: 100%;
+  border-radius: 6px;
+}
+
+.anime-card h2 {
+  margin-top: 10px;
+  font-size: 20px;
+}
+
+.anime-card p {
+  font-size: 14px;
+  color: #ccc;
+}
+
+.watch-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 15px;
+  background-color: #e91e63;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.watch-btn:hover {
+  background-color: #d81b60;
+}
+
+footer {
+  background-color: #1a1a1a;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+  color: #888;
 }
