@@ -4,13 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Naruto — Смотреть аниме</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="../style.css" />
 </head>
 <body>
   <header>
     <div class="logo">AnimeVerse</div>
     <nav class="nav-links">
-      <a href="index.html">Главная</a>
+      <a href="../index.html">Главная</a>
       <a href="#">Жанры</a>
       <a href="#">Поиск</a>
     </nav>
@@ -21,13 +21,21 @@
     <p><strong>Описание:</strong> Путь ниндзя только начинается! Следи за приключениями Наруто Узумаки в мире шиноби.</p>
     <p><strong>Рейтинг:</strong> 8.5/10</p>
 
-    <label for="episode-select">Выберите серию:</label>
-    <select id="episode-select" onchange="changeEpisode(this.value)">
-      <option value="https://drive.google.com/file/d/19qC43bku8ss_vS1s9qB5oBwhnHcdlk1Z/preview">
-        Сезон 1 - Серия 1
-      </option>
-      <!-- Когда будут другие серии — просто добавь их сюда -->
-    </select>
+    <div class="season-selector">
+      <label for="season-select">Сезон:</label>
+      <select id="season-select" onchange="updateEpisodes()">
+        <option value="1">Сезон 1</option>
+      </select>
+    </div>
+
+    <div class="episode-selector">
+      <label for="episode-select">Серия:</label>
+      <select id="episode-select" onchange="changeEpisode(this.value)">
+        <option value="https://drive.google.com/file/d/19qC43bku8ss_vS1s9qB5oBwhnHcdlk1Z/preview">
+          Серия 1
+        </option>
+      </select>
+    </div>
 
     <div id="video-container" style="margin-top: 20px;">
       <iframe
@@ -49,6 +57,32 @@
   <script>
     function changeEpisode(url) {
       document.getElementById("video-frame").src = url;
+    }
+
+    function updateEpisodes() {
+      const season = document.getElementById("season-select").value;
+      const episodeSelect = document.getElementById("episode-select");
+
+      // Очистить список серий
+      episodeSelect.innerHTML = '';
+
+      // Добавить серии в зависимости от сезона
+      if (season === '1') {
+        const option = document.createElement("option");
+        option.value = "https://drive.google.com/file/d/19qC43bku8ss_vS1s9qB5oBwhnHcdlk1Z/preview";
+        option.text = "Серия 1";
+        episodeSelect.appendChild(option);
+
+        // Добавь ещё серии тут по аналогии
+        // например:
+        // const option2 = document.createElement("option");
+        // option2.value = "...";
+        // option2.text = "Серия 2";
+        // episodeSelect.appendChild(option2);
+      }
+
+      // Обновить iframe на первую серию
+      changeEpisode(episodeSelect.value);
     }
   </script>
 </body>
