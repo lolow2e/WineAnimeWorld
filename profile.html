@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Настройки профиля</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <main class="profile-settings">
+    <h1>Настройки профиля</h1>
+    <label for="username">Имя пользователя:</label>
+    <input type="text" id="username" placeholder="Введите ваше имя"/>
+
+    <label for="theme">Тема оформления:</label>
+    <select id="theme">
+      <option value="dark">Тёмная</option>
+      <option value="light">Светлая</option>
+    </select>
+
+    <button id="saveSettings">Сохранить</button>
+  </main>
+
+  <script>
+    const saveBtn = document.getElementById('saveSettings');
+    const usernameInput = document.getElementById('username');
+    const themeSelect = document.getElementById('theme');
+
+    saveBtn.onclick = () => {
+      localStorage.setItem('username', usernameInput.value);
+      localStorage.setItem('theme', themeSelect.value);
+      alert('Настройки сохранены!');
+    };
+
+    window.onload = () => {
+      usernameInput.value = localStorage.getItem('username') || '';
+      themeSelect.value = localStorage.getItem('theme') || 'dark';
+    };
+  </script>
+</body>
+</html>
