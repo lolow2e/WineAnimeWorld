@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>AnimeVerse</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
   <header>
@@ -14,9 +14,9 @@
       <a href="#">Жанры</a>
       <a href="#">Поиск</a>
     </nav>
-    <div class="profile-button" id="openProfile">
-      <img src="https://i.imgur.com/8Km9tLL.png" alt="Профиль" id="profileAvatar">
-    </div>
+    <a href="profile.html" class="profile-button" title="Профиль">
+      <img src="https://img.icons8.com/ios-glyphs/30/ffffff/incognito.png" alt="Инкогнито"/>
+    </a>
   </header>
 
   <main>
@@ -30,7 +30,6 @@
       <h2>Популярное</h2>
       <div class="anime-list">
         <!-- Карточки аниме -->
-        <!-- ... (оставь как есть) -->
       </div>
     </section>
   </main>
@@ -38,53 +37,5 @@
   <footer>
     <p>&copy; 2025 AnimeVerse. Сделано с душой.</p>
   </footer>
-
-  <!-- Модальное окно профиля -->
-  <div class="modal" id="profileModal">
-    <div class="modal-content">
-      <span class="close" id="closeModal">&times;</span>
-      <h2>Профиль</h2>
-      <label for="username">Имя:</label>
-      <input type="text" id="username" placeholder="Введите имя">
-      <label for="avatarUrl">Ссылка на аватар:</label>
-      <input type="text" id="avatarUrl" placeholder="Вставьте URL картинки">
-      <button id="saveProfile">Сохранить</button>
-    </div>
-  </div>
-
-  <script>
-    // Открытие модалки
-    const profileBtn = document.getElementById('openProfile');
-    const modal = document.getElementById('profileModal');
-    const closeModal = document.getElementById('closeModal');
-    const saveBtn = document.getElementById('saveProfile');
-    const avatarInput = document.getElementById('avatarUrl');
-    const nameInput = document.getElementById('username');
-    const profileAvatar = document.getElementById('profileAvatar');
-
-    profileBtn.onclick = () => {
-      modal.style.display = 'flex';
-    };
-
-    closeModal.onclick = () => {
-      modal.style.display = 'none';
-    };
-
-    window.onclick = (e) => {
-      if (e.target === modal) {
-        modal.style.display = 'none';
-      }
-    };
-
-    saveBtn.onclick = () => {
-      if (avatarInput.value) {
-        profileAvatar.src = avatarInput.value;
-      }
-      if (nameInput.value) {
-        alert(`Имя обновлено: ${nameInput.value}`);
-      }
-      modal.style.display = 'none';
-    };
-  </script>
 </body>
 </html>
