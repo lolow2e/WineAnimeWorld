@@ -9,25 +9,32 @@ body {
 
 a {
   text-decoration: none;
+  color: inherit;
 }
 
 header {
   background-color: #141421;
-  padding: 15px 30px;
+  padding: 15px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
   animation: fadeInDown 0.6s ease-out;
 }
 
 .logo {
-  font-size: 26px;
+  font-size: 24px;
   font-weight: bold;
   color: #ff4081;
 }
 
+.nav-links {
+  display: flex;
+  align-items: center;
+}
+
 .nav-links a {
-  margin-left: 20px;
+  margin-left: 15px;
   color: #fff;
   transition: color 0.3s ease;
 }
@@ -38,24 +45,25 @@ header {
 
 .hero {
   text-align: center;
-  padding: 60px 20px;
+  padding: 50px 20px;
   animation: fadeIn 1s ease-in-out;
 }
 
 .hero h1 {
-  font-size: 36px;
+  font-size: 32px;
   color: #ff4081;
 }
 
 .hero p {
-  font-size: 18px;
-  margin: 10px 0 20px;
+  font-size: 16px;
   color: #ccc;
+  margin-top: 10px;
+  margin-bottom: 20px;
 }
 
 .hero-btn {
   background-color: #ff4081;
-  padding: 10px 25px;
+  padding: 10px 20px;
   border-radius: 5px;
   color: #fff;
   font-weight: bold;
@@ -66,30 +74,51 @@ header {
   background-color: #e91e63;
 }
 
+.profile-button {
+  margin-left: 15px;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #2c2c3e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 22px;
+  color: #fff;
+  border: 2px solid #ff4081;
+  transition: transform 0.3s ease;
+}
+
+.profile-button:hover {
+  transform: scale(1.1);
+}
+
+/* Секция с аниме */
 .anime-section {
   padding: 30px 20px;
 }
 
 .anime-section h2 {
-  font-size: 28px;
-  margin-bottom: 20px;
-  color: #ff4081;
+  font-size: 26px;
   text-align: center;
+  color: #ff4081;
+  margin-bottom: 20px;
 }
 
 .anime-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
   justify-content: center;
+  gap: 20px;
 }
 
 .anime-card {
+  width: 280px;
   background-color: #1f1f2e;
   border-radius: 10px;
   overflow: hidden;
-  width: 280px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s, box-shadow 0.3s;
   animation: fadeInUp 1s ease;
 }
 
@@ -112,9 +141,9 @@ header {
 }
 
 .card-info p {
-  color: #bbb;
   font-size: 14px;
-  margin: 5px 0 10px;
+  color: #bbb;
+  margin-bottom: 10px;
 }
 
 .watch-btn {
@@ -138,7 +167,47 @@ footer {
   color: #888;
 }
 
-/* --- Анимации --- */
+/* Профиль страница */
+.profile-page {
+  padding: 30px 20px;
+  max-width: 500px;
+  margin: auto;
+  animation: fadeIn 1s ease;
+}
+
+.profile-page h2 {
+  text-align: center;
+  color: #ff4081;
+  margin-bottom: 20px;
+}
+
+.profile-page input,
+.profile-page select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  background-color: #2c2c3e;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+}
+
+.profile-page button {
+  padding: 10px;
+  width: 100%;
+  background-color: #ff4081;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.profile-page button:hover {
+  background-color: #e91e63;
+}
+
+/* Анимации */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
@@ -154,7 +223,7 @@ footer {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* --- Мобильная адаптация --- */
+/* Мобильная адаптация */
 @media (max-width: 600px) {
   header {
     flex-direction: column;
@@ -162,10 +231,9 @@ footer {
   }
 
   .nav-links {
-    margin-top: 10px;
-    display: flex;
     flex-direction: column;
     width: 100%;
+    margin-top: 10px;
   }
 
   .nav-links a {
@@ -173,173 +241,15 @@ footer {
   }
 
   .hero h1 {
-    font-size: 24px;
+    font-size: 22px;
   }
 
   .anime-card {
     width: 100%;
     max-width: 95%;
   }
-}
-/* Модальное окно */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 999;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.8);
-  justify-content: center;
-  align-items: center;
-}
 
-.modal-content {
-  background: #1f1f2e;
-  padding: 20px;
-  border-radius: 10px;
-  width: 90%;
-  max-width: 600px;
-  color: #fff;
-  animation: fadeIn 0.5s ease;
-}
-
-.modal video {
-  width: 100%;
-  border-radius: 10px;
-  margin: 15px 0;
-}
-
-.close {
-  font-size: 28px;
-  float: right;
-  cursor: pointer;
-  color: #ccc;
-}
-
-.close:hover {
-  color: #fff;
-}
-.anime-detail {
-  padding: 30px 20px;
-  color: #fff;
-  max-width: 800px;
-  margin: auto;
-  animation: fadeIn 1s ease;
-}
-
-.fake-player {
-  width: 100%;
-  height: 200px;
-  background: #000;
-  border-radius: 10px;
-  margin-bottom: 20px;
-  position: relative;
-}
-
-.fake-player::before {
-  content: '▶';
-  position: absolute;
-  font-size: 48px;
-  color: #fff;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  opacity: 0.5;
-}
-.season-selector,
-.episode-selector {
-  margin: 10px 0;
-}
-
-.season-selector label,
-.episode-selector label {
-  margin-right: 10px;
-  font-weight: bold;
-}
-
-.season-selector select,
-.episode-selector select {
-  padding: 5px;
-  border-radius: 5px;
-  border: none;
-}
-.anime-page {
-  padding: 40px 20px;
-  max-width: 1000px;
-  margin: auto;
-  animation: fadeIn 1s ease;
-}
-
-.anime-page h1 {
-  color: #ff4081;
-  margin-bottom: 10px;
-}
-
-.anime-page p {
-  color: #ccc;
-  margin-bottom: 10px;
-}
-
-.anime-page select {
-  padding: 10px;
-  font-size: 16px;
-  background-color: #1f1f2e;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  margin-top: 10px;
-}
-
-#video-container {
-  margin-top: 30px;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 0 15px rgba(255, 64, 129, 0.2);
-}
-.profile-button {
-  margin-left: 20px;
-  cursor: pointer;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  overflow: hidden;
-  border: 2px solid #ff4081;
-  transition: transform 0.3s ease;
-}
-
-.profile-button img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.profile-button:hover {
-  transform: scale(1.1);
-}
-
-.modal-content input {
-  width: 100%;
-  padding: 10px;
-  margin: 10px 0;
-  border-radius: 5px;
-  border: none;
-  background-color: #2c2c3e;
-  color: #fff;
-}
-
-.modal-content button {
-  padding: 10px 20px;
-  background-color: #ff4081;
-  border: none;
-  border-radius: 5px;
-  color: #fff;
-  cursor: pointer;
-  font-weight: bold;
-  transition: background 0.3s ease;
-}
-
-.modal-content button:hover {
-  background-color: #e91e63;
+  .profile-button {
+    margin-top: 10px;
+  }
 }
